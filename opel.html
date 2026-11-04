@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thruster modeling - Havalyn Hale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="telemetry.html">Telemetry</a>
+    <a href="vine-robotics.html">Vine Robotics</a>
+    <a href="rocky.html">Rocky</a>
+    <a href="opel.html">OPEL</a>
+  </nav>
+
+  <h1>Thruster modeling</h1>
+  <p class="meta">Olin Plasma Engineering Lab (OPEL), Researcher. Group project, since January 2026.</p>
+
+  <h2>MK5: MATLAB model</h2>
+  <p>
+    We built MATLAB models for the MK5 Hall effect thruster on an 8 kg CubeSat. For a 280 m/s
+    apogee raise, the model gives 0.11-0.22 kg of propellant across exhaust velocities of
+    10-20 km/s. At 0.95 mg/s of argon it predicts about 15 mN of thrust, 1,630 s Isp and
+    305 W. We wrote the results up as an Olin ISR.
+  </p>
+  <img class="small" src="images/opel-matlab.png" alt="MATLAB output for the MK5 thruster model">
+  <p class="caption">MK5 MATLAB output.</p>
+
+  <h2>MK4: COMSOL rebuild</h2>
+  <p>
+    We rebuilt the MK4 Hall effect thruster in COMSOL to learn the software and simulate its
+    electromagnetic fields, to support a redesign with updated design parameters.
+  </p>
+  <img src="images/opel-mk4-comsol.png" alt="COMSOL field simulation of the MK4 thruster">
+  <p class="caption">MK4 field simulation in COMSOL.</p>
+
+  <h2>Propellant tank</h2>
+  <p>
+    We wrote design requirements for a 3U CubeSat-size thruster. As part of that we did a
+    thin-wall stress check on an Al 6061-T6 propellant tank with a 3 mm wall at 14.3 MPa.
+    The safety factor came out to 1.08.
+  </p>
+
+  <footer><a href="index.html">Back to all projects</a></footer>
+</body>
+</html>

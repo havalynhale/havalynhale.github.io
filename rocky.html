@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rocky Animatronic - Havalyn Hale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="telemetry.html">Telemetry</a>
+    <a href="vine-robotics.html">Vine Robotics</a>
+    <a href="rocky.html">Rocky</a>
+    <a href="opel.html">OPEL</a>
+  </nav>
+
+  <h1>Rocky Animatronic</h1>
+  <p class="meta">Principles of Integrated Engineering (PIE), team project. In progress, fall 2026.</p>
+
+  <p>
+    Our team is building an animatronic of Rocky from <em>Project Hail Mary</em>. The plan is
+    4 legs that walk and a fifth leg that works as an arm. Right now we're on the walking MVP.
+    I wired and labeled the servo driver, and I'm writing the C++ PWM code for the walking gait
+    using the Adafruit library on an Arduino Nano.
+  </p>
+
+  <h2>MVP #1 (Pebble)</h2>
+  <p>
+    The first version had three legs, smaller Vigor servos, and an Arduino Nano on an IO
+    shield. The servos were too weak and it had a hard time lifting itself up.
+  </p>
+  <img class="small" src="images/rocky-mvp1.jpg" alt="Three-legged robot prototype laid flat">
+  <p class="caption">Pebble laid flat out.</p>
+  <video class="small" src="images/rocky-mvp1.mp4" controls muted playsinline loop preload="metadata"></video>
+  <p class="caption">Pebble moving up and down.</p>
+
+  <h2>Servo test</h2>
+  <p>
+    Before building the next version, we checked whether one Vigor VS-2HMB servo could lift
+    the whole body at 6 V. It could, so we switched to those.
+  </p>
+  <img class="small" src="images/rocky-torque-test.jpg" alt="One servo mounted for a torque test">
+  <p class="caption">One VS-2HMB servo getting ready to be tested.</p>
+
+  <h2>MVP #2</h2>
+  <p>
+    MVP #2 has 4 legs with 3 VS-2HMB servos each, so 12 servos total. I labeled every servo by
+    leg and joint so we can tell them apart when something goes wrong.
+  </p>
+  <img src="images/rocky-mvp2-labeled.jpg" alt="Four-legged robot with labeled servos">
+  <p class="caption">MVP #2 with all 12 servos labeled.</p>
+
+  <h2>Power problems</h2>
+  <p>
+    Twelve of these servos pull about 3 A normally, and around 9.6 A if they all stall at once.
+  </p>
+  <p>
+    We tried using a buck converter to bring a 12 V AC adapter down to 6 V, and I tested it
+    with a multimeter and a bench power supply. It didn't work. The converter we picked only
+    handles 3 A, which isn't enough for these servos. The Nano IO shield couldn't handle the
+    current either, so we switched to a PWM servo driver.
+  </p>
+  <img class="small" src="images/rocky-buck-test.jpg" alt="Bench setup testing the buck converter">
+  <p class="caption">Testing the buck converter.</p>
+
+  <h2>Next</h2>
+  <ul>
+    <li>Sort out the current draw and stalling; lots of buzzing</li>
+    <li>Finish the walking code, implement a crawl gait</li>
+  </ul>
+
+  <footer><a href="index.html">Back to all projects</a></footer>
+</body>
+</html>
