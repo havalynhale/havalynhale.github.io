@@ -91,6 +91,8 @@ img, video {
   background: #ffffff;
   box-sizing: border-box;
 }
+/* keep tall photos from filling the whole screen */
+img, video { max-height: 440px; width: auto; }
 img.small, video.small { max-width: 420px; }
 img.medium { max-width: 560px; }
 
@@ -117,6 +119,7 @@ img.medium { max-width: 560px; }
 .grid p { margin: 0; font-size: 13px; }
 .grid img {
   width: 100%;
+  max-height: none;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin-top: 0;
@@ -132,7 +135,9 @@ footer {
 
 @media (max-width: 600px) {
   body { margin: 0; border: none; padding: 0 14px 20px; }
-  nav { padding: 7px 14px; margin: 0 -14px 20px; }
+  nav { padding: 7px 14px; margin: 0 -14px 20px; display: flex; flex-wrap: wrap; gap: 2px 14px; }
+  nav a { margin-right: 0; }
+  nav a + a::before { display: none; }
   .grid { grid-template-columns: 1fr; }
   img.small, video.small, img.medium { max-width: 100%; }
 }
