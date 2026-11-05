@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>RF parameters poster - Havalyn Hale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="telemetry.html">Telemetry</a>
+    <a href="vine-robotics.html">Vine Robotics</a>
+    <a href="rocky.html">Rocky</a>
+    <a href="opel.html">OPEL</a>
+    <a href="rf-poster.html">RF Poster</a>
+  </nav>
+
+  <h1>Introduction to Radio Frequency Parameters Poster</h1>
+  <p class="meta">Independent project, presented at the Quantitative Engineering Analysis (QEA) final event. Fall 2025.</p>
+
+  <p>
+    This is a fun project I took on to challenge myself. I did all the research myself and
+    compiled it into one poster that was printed and presented to students and teachers alike.
+    I had to be conscious about making it beginner friendly, as the audience was mostly my
+    fellow undergraduates!
+  </p>
+
+  <a href="rf-poster.pdf"><img class="wide" src="images/rfposter-full.jpg" alt="Poster titled Introduction to Radio Frequency Parameters, covering Z, Y, ABCD and S parameters, Smith charts and impedance matching"></a>
+  <p class="caption">The full poster. Click it to open the <a href="rf-poster.pdf">full-size PDF</a>.</p>
+
+  <h2>Worked Smith chart example</h2>
+  <p>
+    I worked this example by hand: a 43 + j15 &Omega; load on a 50 &Omega; line. Normalized, that's
+    z = 0.86 + j0.3. I plotted it on the Smith chart and calculated its reflection coefficient,
+    which shows the load is close to matched but slightly inductive.
+  </p>
+  <a href="images/rfposter-smith.jpg"><img class="wide" src="images/rfposter-smith.jpg" alt="Hand-annotated Smith chart with the normalized load impedance plotted, the reflection coefficient worked out, and a sketch of a source, transmission line and antenna"></a>
+  <p class="caption">My hand-worked example from the poster, with a sketch of what's happening physically on the line.</p>
+
+  <h2>What I'd correct now</h2>
+  <p>
+    I've left the poster as I presented it, but looking back, there are a few things I'd fix:
+  </p>
+  <ul>
+    <li><b>Y parameter equations:</b> I wrote I<sub>1</sub> = Y<sub>11</sub>I<sub>1</sub> + Y<sub>12</sub>I<sub>2</sub>. The right side should use voltages: I<sub>1</sub> = Y<sub>11</sub>V<sub>1</sub> + Y<sub>12</sub>V<sub>2</sub>.</li>
+    <li><b>S<sub>12</sub>:</b> a <i>lower</i> |S<sub>12</sub>| means better isolation between the ports, not a higher one.</li>
+    <li><b>S<sub>21</sub>:</b> this is the forward gain from input to output. My paragraph described signal being fed back to the input, which is reverse transmission (S<sub>12</sub>).</li>
+    <li><b>Lossy vs lossless:</b> I mixed up the two when I said the lossy option sounds better. The audio comparison also blurs two different ideas: a lossless <i>network</i> (|S<sub>11</sub>|&sup2; + |S<sub>21</sub>|&sup2; = 1) and lossless <i>audio compression</i>.</li>
+    <li><b>Inductive impedance:</b> current lags voltage because of inductors, not resistors.</li>
+    <li><b>Transmission lines:</b> my photo and description were of power lines. In RF, transmission lines are things like coaxial cable and microstrip traces.</li>
+    <li><b>Smith chart math:</b> for z = 0.86 + j0.3, S<sub>11</sub> works out to about &minus;0.048 + j0.169, so |S<sub>11</sub>| &asymp; 0.18 rather than 0.165. The conclusion (close to matched, slightly inductive) still holds.</li>
+  </ul>
+
+  <footer><a href="index.html">Back to all projects</a></footer>
+</body>
+</html>

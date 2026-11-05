@@ -95,6 +95,7 @@ img, video {
 img, video { max-height: 440px; width: auto; }
 img.small, video.small { max-width: 420px; }
 img.medium { max-width: 560px; }
+img.wide { max-height: none; width: 100%; }
 
 .caption {
   font-size: 12px;
@@ -124,6 +125,12 @@ img.medium { max-width: 560px; }
   object-fit: cover;
   margin-top: 0;
 }
+/* center a lone card on the last row */
+.grid > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 12px);
+}
 
 footer {
   margin-top: 36px;
@@ -139,5 +146,6 @@ footer {
   nav a { margin-right: 0; }
   nav a + a::before { display: none; }
   .grid { grid-template-columns: 1fr; }
+  .grid > div:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
   img.small, video.small, img.medium { max-width: 100%; }
 }
