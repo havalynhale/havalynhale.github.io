@@ -1,7 +1,7 @@
 /* Early-2000s personal homepage style */
 
 html {
-  background: #d9dde3;
+  background: #d6d6d6;
 }
 
 body {
@@ -10,20 +10,20 @@ body {
   padding: 0 24px 20px;
   box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #8a94a3;
+  border: 1px solid #8c8c8c;
   font-family: Verdana, Tahoma, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #222222;
 }
 
-a { color: #0033cc; }
-a:visited { color: #663399; }
-a:hover { color: #cc3300; }
+a { color: #1a1a1a; }
+a:visited { color: #555555; }
+a:hover { color: #000000; }
 
 nav {
-  background: #1f3a60;
-  border-bottom: 3px solid #c9a227;
+  background: #1a1a1a;
+  border-bottom: 3px solid #7a7a7a;
   padding: 7px 24px;
   margin: 0 -24px 24px; /* stretch the bar across the body's side padding */
   font-size: 13px;
@@ -35,10 +35,10 @@ nav a:visited {
   text-decoration: none;
   margin-right: 6px;
 }
-nav a:hover { text-decoration: underline; color: #ffe08a; }
+nav a:hover { text-decoration: underline; color: #d0d0d0; }
 nav a + a::before {
   content: "|";
-  color: #8fa3c0;
+  color: #9a9a9a;
   margin-right: 8px;
   font-weight: normal;
 }
@@ -47,7 +47,7 @@ h1 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 26px;
   font-weight: normal;
-  color: #1f3a60;
+  color: #1a1a1a;
   margin: 0 0 2px;
 }
 
@@ -55,8 +55,8 @@ h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
   font-weight: normal;
-  color: #1f3a60;
-  border-bottom: 1px solid #b8c0cc;
+  color: #1a1a1a;
+  border-bottom: 1px solid #bdbdbd;
   padding-bottom: 2px;
   margin-top: 30px;
 }
@@ -67,6 +67,16 @@ h2 {
   font-style: italic;
 }
 
+/* 3-line project summary under each page title */
+.summary {
+  background: #f2f2f2;
+  border: 1px solid #bdbdbd;
+  border-left: 4px solid #7a7a7a;
+  padding: 8px 12px;
+  margin: 14px 0 6px;
+}
+.summary p { margin: 3px 0; }
+
 ul { padding-left: 22px; }
 li { margin-bottom: 3px; }
 
@@ -76,7 +86,7 @@ img, video {
   max-width: 100%;
   height: auto;
   margin-top: 14px;
-  border: 1px solid #8a94a3;
+  border: 1px solid #8c8c8c;
   padding: 3px;
   background: #ffffff;
   box-sizing: border-box;
@@ -115,7 +125,7 @@ img.medium { max-width: 560px; }
 footer {
   margin-top: 36px;
   padding-top: 8px;
-  border-top: 1px solid #b8c0cc;
+  border-top: 1px solid #bdbdbd;
   font-size: 11px;
   color: #666666;
 }

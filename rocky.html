@@ -19,6 +19,12 @@
   <h1>Rocky Animatronic</h1>
   <p class="meta">Principles of Integrated Engineering (PIE), team project. In progress, fall 2026.</p>
 
+  <div class="summary">
+    <p><b>Problem:</b> A walking robot needs 12 servos strong enough to lift its body, and a power setup that can feed them without stalling.</p>
+    <p><b>Role:</b> Team project. I wired and labeled the servo driver, tested the power setup, and I'm writing the C++ walking gait code on an Arduino Nano.</p>
+    <p><b>Result:</b> The servos respond to movement commands. We found the 3 A buck converter and Nano shield couldn't supply the stall current (about 9.6 A) and switched to a PWM Adafruit servo driver.</p>
+  </div>
+
   <p>
     Our team is building an animatronic of Rocky from <em>Project Hail Mary</em>. The plan is
     4 legs that walk and a fifth leg that works as an arm. Right now we're on the walking MVP.
@@ -44,13 +50,13 @@
   <img class="small" src="images/rocky-torque-test.jpg" alt="One servo mounted for a torque test">
   <p class="caption">One VS-2HMB servo getting ready to be tested.</p>
 
-  <h2>MVP #2</h2>
+  <h2>MVP #2 (Pebble #2)</h2>
   <p>
-    MVP #2 has 4 legs with 3 VS-2HMB servos each, so 12 servos total. I labeled every servo by
+    Pebble #2 has 4 legs with 3 VS-2HMB servos each, so 12 servos total. I labeled every servo by
     leg and joint so we can tell them apart when something goes wrong.
   </p>
   <img src="images/rocky-mvp2-labeled.jpg" alt="Four-legged robot with labeled servos">
-  <p class="caption">MVP #2 with all 12 servos labeled.</p>
+  <p class="caption">Pebble #2 with all 12 servos labeled.</p>
 
   <h2>Power problems</h2>
   <p>

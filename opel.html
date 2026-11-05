@@ -19,19 +19,26 @@
   <h1>Thruster modeling</h1>
   <p class="meta">Olin Plasma Engineering Lab (OPEL), Researcher. Group project, since January 2026.</p>
 
+  <div class="summary">
+    <p><b>Problem:</b> The lab needed thruster performance and propellant estimates for a CubeSat mission, and a field model of the MK4 thruster for its redesign.</p>
+    <p><b>Role:</b> I rebuilt the MK4 thruster in COMSOL myself and read up on the propulsion equations behind the MATLAB model. The MATLAB model and tank check were group work.</p>
+    <p><b>Result:</b> Predicted about 15 mN thrust, 1,630 s Isp and 305 W for the MK5, 0.11-0.22 kg of propellant, and a 1.08 tank safety factor, written up as an Olin ISR.</p>
+  </div>
+
   <h2>MK5: MATLAB model</h2>
   <p>
     We built MATLAB models for the MK5 Hall effect thruster on an 8 kg CubeSat. For a 280 m/s
     apogee raise, the model gives 0.11-0.22 kg of propellant across exhaust velocities of
     10-20 km/s. At 0.95 mg/s of argon it predicts about 15 mN of thrust, 1,630 s Isp and
-    305 W. We wrote the results up as an Olin ISR.
+    305 W. We wrote the results up as an Olin ISR. For my part, I read up on the propulsion
+    equations the model is built on.
   </p>
   <img class="small" src="images/opel-matlab.png" alt="MATLAB output for the MK5 thruster model">
   <p class="caption">MK5 MATLAB output.</p>
 
   <h2>MK4: COMSOL rebuild</h2>
   <p>
-    We rebuilt the MK4 Hall effect thruster in COMSOL to learn the software and simulate its
+    I rebuilt the MK4 Hall effect thruster in COMSOL to learn the software and simulate its
     electromagnetic fields, to support a redesign with updated design parameters.
   </p>
   <img src="images/opel-mk4-comsol.png" alt="COMSOL field simulation of the MK4 thruster">
@@ -40,8 +47,17 @@
   <h2>Propellant tank</h2>
   <p>
     We wrote design requirements for a 3U CubeSat-size thruster. As part of that we did a
-    thin-wall stress check on an Al 6061-T6 propellant tank with a 3 mm wall at 14.3 MPa.
-    The safety factor came out to 1.08.
+    thin-wall stress check on an Al 6061-T6 propellant tank at an internal pressure of 14.3 MPa.
+  </p>
+  <ul>
+    <li>Tank: 10 cm tall, 5 cm outer radius, 4.7 cm inner radius, so a 3 mm wall</li>
+    <li>The wall is thin next to the tank's 9.4 cm inner diameter, so thin-wall formulas apply</li>
+    <li>Using the mean radius (4.85 cm), the hoop stress is about 231 MPa</li>
+    <li>Against a 250 MPa yield strength, the safety factor is 1.08</li>
+  </ul>
+  <p>
+    A safety factor that close to 1 means the tank design has very little margin, so the wall
+    thickness or the operating pressure would need another look before building it.
   </p>
 
   <footer><a href="index.html">Back to all projects</a></footer>

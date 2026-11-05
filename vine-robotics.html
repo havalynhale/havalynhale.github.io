@@ -19,14 +19,21 @@
   <h1>Vine robotics</h1>
   <p class="meta">Olin Vine Robotics, Research Assistant. In progress, fall 2026.</p>
 
+  <div class="summary">
+    <p><b>Problem:</b> The vine robot steers with air pressure, so it needs accurate pressure readings and a separately controlled air channel for each direction.</p>
+    <p><b>Role:</b> Research assistant in an independent study with Aditi Lagisetty. The sensing hardware, firmware and steering board design on this page are my current contributions.</p>
+    <p><b>Result:</b> A Pico pressure-sensing board with C firmware, with noise down to a few thousandths of a psi, and a 6-channel steering board design.</p>
+  </div>
+
   <p>
     This is an independent study on the mechanics and modeling of vine-inspired soft growing
-    robots, with Aditi Lagisetty. Our advisor is John Bell.
+    robots, with Aditi Lagisetty. Our advisor is John Bell. Aditi and I share the study, but
+    everything shown on this page is work I did myself.
   </p>
 
   <h2>Steering board</h2>
   <p>
-    The robot steers with air pressure. As such, I had to calibrate our Honeywell ABP pressure
+    The robot steers with air pressure. As such, I had to calibrate the Honeywell ABP pressure
     sensor, create the code, and implement our selected microcontroller.
   </p>
   <img class="small" src="images/vine-air-supply.jpg" alt="The lab's air supply board">
@@ -53,7 +60,7 @@
     sections: 3 at the base (S1), 2 in the middle (S2) and 1 at S3.
   </p>
   <p>
-    We designed a steering control board with 6 separate pressure channels. Each one has its own
+    I designed a steering control board with 6 separate pressure channels. Each one has its own
     regulator, gauge, pressure sensor and vent valve, so the robot can have 6 degrees of freedom.
     The air manifold can be expanded: it has 2 degrees of steering now, and room to go to 5 or
     more. I'm starting construction on the steering board, based on this sketch.

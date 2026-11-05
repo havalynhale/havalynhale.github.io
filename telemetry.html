@@ -19,6 +19,12 @@
   <h1>RF Telemetry Project (Formula)</h1>
   <p class="meta">Olin Electric Motorsports, Low Voltage Engineer. In progress, fall 2026.</p>
 
+  <div class="summary">
+    <p><b>Problem:</b> The car's telemetry only got about 3 messages per second to the pits, and we didn't know if the radios would reach across a full track.</p>
+    <p><b>Role:</b> Finishing the telemetry system and designing the ground station that'll be eventually used for our Formula SAE team.</p>
+    <p><b>Result:</b> Over 100 messages per second (packets cut from about 1,870 bytes to about 40), 4.8% loss at 151 ft with no line of sight, and a predicted 29.6 dB margin at 1 km.</p>
+  </div>
+
   <p>
     I'm working on the car's telemetry system. A Raspberry Pi on the car reads CAN bus data
     and sends it to a ground station over a pair of 915 MHz SiK Holybro radios. It's written
