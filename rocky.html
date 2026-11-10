@@ -22,15 +22,15 @@
 
   <div class="summary">
     <p><b>Problem:</b> A walking robot needs 12 servos strong enough to lift its body, and a power setup that can feed them without stalling.</p>
-    <p><b>Role:</b> Team project. I wired and labeled the servo driver, tested the power setup, and I'm writing the C++ walking gait code on an Arduino Nano.</p>
-    <p><b>Result:</b> The servos respond to movement commands. We found the 3 A buck converter and Nano shield couldn't supply the stall current (about 9.6 A) and switched to a PWM Adafruit servo driver.</p>
+    <p><b>Role:</b> Team project. I wired and labeled the servo driver, tested the power setup, measured the leg geometry, and ran a test crawl gait on the robot.</p>
+    <p><b>Result:</b> Pebble #2 walks with a hard-coded test crawl gait, drawing 2.05 A at 6 V (12.3 W). We found the 3 A buck converter and Nano shield couldn't supply the stall current (about 9.6 A) and switched to a PWM Adafruit servo driver.</p>
   </div>
 
   <p>
     Our team is building an animatronic of Rocky from <em>Project Hail Mary</em>. The plan is
     4 legs that walk and a fifth leg that works as an arm. Right now we're on the walking MVP.
-    I wired and labeled the servo driver, and I'm writing the C++ PWM code for the walking gait
-    using the Adafruit library on an Arduino Nano.
+    I wired and labeled the servo driver, measured the leg geometry, and ran a test gait to check
+    the hardware before writing the final walking code.
   </p>
 
   <h2>MVP #1 (Pebble)</h2>
@@ -72,10 +72,21 @@
   <img class="small" src="images/rocky-buck-test.jpg" alt="Bench setup testing the buck converter">
   <p class="caption">Testing the buck converter.</p>
 
+  <h2>First steps</h2>
+  <p>
+    Pebble #2 walks. This is a test gait, not the final one. I measured the leg geometry and ran a
+    hard-coded crawl gait from template code (C++, Adafruit PWM library) to check the hardware
+    before writing the real gait. A crawl gait lifts one leg at a time and keeps three feet down,
+    so the robot stays stable while I look at power and heat. While walking, it draws 2.05 A at
+    6 V (12.3 W) from a bench supply.
+  </p>
+  <video src="images/rocky-crawl-gait.mp4" controls muted playsinline loop preload="metadata"></video>
+  <p class="caption">Pebble #2 walking with the test crawl gait.</p>
+
   <h2>Next</h2>
   <ul>
-    <li>Sort out the current draw and stalling; lots of buzzing</li>
-    <li>Finish the walking code, implement a crawl gait</li>
+    <li>The current draw is too high. When the servos aren't buzzing, standing current is only about 0.07 A, so I want to find out what's making them buzz and why it pulls so much more</li>
+    <li>Write the final gait myself using inverse kinematics, so foot placement is calculated instead of hand-tuned</li>
   </ul>
 
   <footer><a href="index.html">Back to all projects</a></footer>
